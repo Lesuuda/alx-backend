@@ -15,12 +15,12 @@ app = Flask(__name__)
 
 
 @app.route('/')
-def home():
+def home() -> str:
     """renders a template 1-index.html"""
     return render_template('1-index.html')
 
 
-def get_locale():
+def get_locale() -> str:
     """gets local language"""
     return request.accept_languages.best_match(app.config['LANGUAGES'])
 
